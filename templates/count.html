@@ -1,0 +1,22 @@
+<h1>There are {{ wordscount }} words in your text</h1>
+
+<a href="{% url 'home' %}">Start Again</a>
+
+<h2>Your Text:</h2>
+<br>
+{{ fulltext }}
+<br>
+
+<h3> Word Count: </h3>
+<table>
+    <tr>
+        <td><b>Word</b></td>
+        <td><b>Count</b></td>
+    </tr>
+    {% for word,count in dictionary %}
+        <tr>
+            <td>{{ word }}</td>
+            <td>{{ count }}</td>
+        </tr>
+    {% endfor %}
+</table>
